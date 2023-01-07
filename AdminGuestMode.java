@@ -16,5 +16,17 @@ public class AdminGuestMode {
 		} else {
 			System.out.println("Please, select either 'ADMIN' or 'GUEST' mode for this program");
 		}
+		/* Alternate method
+		 * 		String admin = "--admin";
+		String guest = "--guest";
+		String inputArgs = String.join(",", args);
+		if (inputArgs.contains(admin) && inputArgs.contains(guest)) {
+		    System.out.println("Please, select either 'ADMIN' or 'GUEST' mode for this program");
+		} else if (inputArgs.contains(admin)) {
+			System.out.println("Hello, Admin!");
+		} else {
+		    System.out.println("Hello, Guest!");
+		}
+		 */
 	}
 }
