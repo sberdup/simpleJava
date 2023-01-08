@@ -58,6 +58,7 @@ public class ConvertDecimalToRoman {
 	 */
 	public static String decimal2Roman(int number) {
 		StringBuilder sb = new StringBuilder();
+		//TODO Use 2 arrays to match values and letters and avoid multiple IFs
 		if (number == 100) {
 			return "C";
 		}
@@ -142,6 +143,7 @@ public class ConvertDecimalToRoman {
 	 * @return true if String is Roman number
 	 */
 	public static boolean isRomanNumberValid(String romanNumber) {
+		//TODO verify with regex
 	    int convertedNum = roman2Decimal(romanNumber);
 	    return isDecimalNumberValid(convertedNum);
 	}

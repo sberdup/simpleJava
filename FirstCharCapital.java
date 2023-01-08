@@ -10,7 +10,7 @@ public class FirstCharCapital {
 		
 		System.out.println(firstCharToTitleCase(userInput));
 	}
-
+/*	Solution not passing test
 	public static String firstCharToTitleCase(String string) {
 		String[] arr = string.split("\s");
 		for (int i = 0; i < arr.length; i++) {
@@ -18,5 +18,19 @@ public class FirstCharCapital {
 			arr[i] = lowercase.substring(0,1).toUpperCase() + lowercase.substring(1);
 		}
 		return String.join(" ", arr);
+	}
+	*/
+    public static String firstCharToTitleCase(String string) {
+		char[] chars = string.toLowerCase().toCharArray();
+		boolean found = false;
+		for (int i = 0; i < chars.length; i++) {
+			if (!found && Character.isLetter(chars[i])) {
+				chars[i] = Character.toUpperCase(chars[i]);
+				found = true;
+			} else if (Character.isWhitespace(chars[i])) {
+				found = false;
+			}
+		}
+		return String.valueOf(chars);
 	}
 }

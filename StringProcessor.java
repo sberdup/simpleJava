@@ -32,9 +32,8 @@ public class StringProcessor {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 1; i<arr.length ; i++) {
 			String[] subArray = arr[i].split(";");
-			//sb.append(subArray[1] + " (email: " + subArray[2] + ")");
-			//sb.append("\n");
-			sb.append(String.format("%s (email: %s) %n", subArray[1], subArray[2]));
+			sb.append(subArray[1] + " (email: " + subArray[2] + ")" + System.lineSeparator());
+			//sb.append(String.format("%s (email: %s) %n", subArray[1], subArray[2]));
 		}
 		return sb.toString();
 	}
