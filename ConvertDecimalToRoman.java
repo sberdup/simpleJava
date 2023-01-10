@@ -143,9 +143,8 @@ public class ConvertDecimalToRoman {
 	 * @return true if String is Roman number
 	 */
 	public static boolean isRomanNumberValid(String romanNumber) {
-		//TODO verify with regex
-	    int convertedNum = roman2Decimal(romanNumber);
-	    return isDecimalNumberValid(convertedNum);
+		return romanNumber
+				.matches("^(?i)M{0,3}(D?C{0,3}|C[DM])(L?X{0,3}|X[LC])(V?I{0,3}|I[VX])$");
 	}
 	
 	public static boolean isDecimalNumberValid(int decimalNumber) {
