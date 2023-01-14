@@ -13,14 +13,16 @@ public class Account {
 	}
 	
 	public void sendMoneyToAccount(Account accountTo, double moneyAmount) {
-	    Transaction sender = new Transaction(this, accountTo, moneyAmount, StandardAccountOperations.MONEY_TRANSFER_SEND);
-	    Transaction receiver = new Transaction(this, accountTo, moneyAmount, StandardAccountOperations.MONEY_TRANSFER_RECEIVE);
-	    
-	    this.transactions = Arrays.copyOf(transactions, transactions.length + 1);
-	    this.transactions[transactions.length - 1] = sender;
-	    
-	    accountTo.transactions = Arrays.copyOf(accountTo.transactions, accountTo.transactions.length + 1);
-	    accountTo.transactions[accountTo.transactions.length - 1] = receiver;
+		if (accountTo != null && moneyAmount > 0) {
+			Transaction sender = new Transaction(this, accountTo, moneyAmount, StandardAccountOperations.MONEY_TRANSFER_SEND);
+		    Transaction receiver = new Transaction(this, accountTo, moneyAmount, StandardAccountOperations.MONEY_TRANSFER_RECEIVE);
+		    
+		    this.transactions = Arrays.copyOf(transactions, transactions.length + 1);
+		    this.transactions[transactions.length - 1] = sender;
+		    
+		    accountTo.transactions = Arrays.copyOf(accountTo.transactions, accountTo.transactions.length + 1);
+		    accountTo.transactions[accountTo.transactions.length - 1] = receiver;
+		}
 	}
 	
 	public void withdrawMoney(double moneyAmount) {
